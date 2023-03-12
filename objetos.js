@@ -36,17 +36,22 @@ let banco = {
 
     consultarCliente: function (cliente) {
 
-        for (let i = 0; i < arrayCuentas.length; i++) {
+        for (let i = 0; i < this.clientes.length; i++) {
 
-            if (cliente === arrayCuentas[i].titularCuenta) {
-                return arrayCuentas[i];
+            if (cliente === this.clientes[i].titularCuenta) {
+                return this.clientes[i];
             }
 
         }
 
-        // if (cliente == this.clientes.titularCuenta) {
-        //     console.log(banco.clientes.nroCuenta);
 
+    },
+
+    deposito: function ( nombre, cantidad ) {
+        for (let i = 0; i < array.length; i++) {
+            
+            
+        }
     }
 
 }

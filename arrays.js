@@ -51,3 +51,17 @@ let notaPeliculas = comparacionNotas(asiaScores, euroScores)
 console.log(notaPeliculas);
 
 
+let frase = 'Breaking Bad Rules!'
+console.log(frase.slice(9, 12));
+console.log(frase.slice(13));
+console.log(frase.slice(-10));
+
+
+function reemplazoFastFast (texto, text1, text2) {
+    return texto.replace(text1, text2)
+};
+
+let textoNuevo = reemplazoFastFast("Todo lo que pasa tiene que bajar", "pasa", "sube")
+console.log(textoNuevo)
+
+
