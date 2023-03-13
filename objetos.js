@@ -35,29 +35,36 @@ let banco = {
     clientes: arrayCuentas,
 
     consultarCliente: function (cliente) {
-
         for (let i = 0; i < this.clientes.length; i++) {
-
             if (cliente === this.clientes[i].titularCuenta) {
                 return this.clientes[i];
             }
-
         }
-
-
     },
 
     deposito: function ( nombre, cantidad ) {
-        for (let i = 0; i < array.length; i++) {
-            
-            
+        let objetoCliente = this.consultarCliente(nombre)
+        objetoCliente.saldoEnPesos += cantidad
+        console.log(`Depósito realizado, su nuevo saldo es: ${objetoCliente.saldoEnPesos}.`);
+    },
+
+    extraccion: function( nombre, cantidad ){
+        let objetoCliente = this.consultarCliente(nombre)
+        if ( objetoCliente.saldoEnPesos > cantidad) {
+            objetoCliente.saldoEnPesos -= cantidad
+            console.log(`Extracción realizada correctamente, su nuevo saldo es: ${objetoCliente.saldoEnPesos}.`);
+        } else {
+            console.log("Fondos Insuficientes");
         }
     }
-
 }
 
-let clienteEncontrado = banco.consultarCliente("Abigael Natte");
-console.log(clienteEncontrado);
+// let clienteEncontrado = banco.consultarCliente("Jacki Shurmer");
+// console.log(clienteEncontrado);
 
-// console.log(banco.clientes[4]);
-// console.log(banco.clientes.titularCuenta);
+// console.log( banco.consultarCliente("Jacki Shurmer") );
+// let respuestaDelCajero = banco.deposito("Jacki Shurmer", 20000)
+// console.log( respuestaDelCajero );
+
+let respuestaRetiroCajero = banco.extraccion("Ansel Ardley", 40000)
+console.log(respuestaRetiroCajero);

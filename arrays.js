@@ -56,8 +56,8 @@ console.log(frase.slice(9, 12));
 console.log(frase.slice(13));
 console.log(frase.slice(-10));
 
-
-function reemplazoFastFast (texto, text1, text2) {
+//CREAR UNA FUNCION PARA REEMPLAZAR TEXTO
+function reemplazoFastFast(texto, text1, text2) {
     return texto.replace(text1, text2)
 };
 
@@ -65,3 +65,36 @@ let textoNuevo = reemplazoFastFast("Todo lo que pasa tiene que bajar", "pasa", "
 console.log(textoNuevo)
 
 
+//CREAR UNA FUNCION PARA ENCONTRAR UNA PALABRA DENTRO DE UN TEXTO
+menciona = (texto, palabra) => {
+    return texto.includes(palabra)
+}
+console.log(menciona("hola mundo", "hola"));
+
+//RECORTAR Y OBTENER TEXTO
+
+let frase2 = 'Hola!, soy Carli';
+
+let licenciada = frase2.slice(-5)
+console.log(licenciada);
+
+//MODIFICAR OBJETO DEPORTISTA SEGUN SU ACTIVIDAD
+
+let deportista = {
+    energia: 100,
+    experiencia: 10,
+    nombre: "Aimar",
+    entrenarHoras: function (cantidadHoras) {
+        return this.energia -= cantidadHoras * 5, this.experiencia += cantidadHoras * 2
+        
+    }
+};
+
+console.log("==Antes de comenzar entrenamiento==");
+console.log("Deportista energia: " + deportista.energia);
+console.log("Deportista experiencia: " + deportista.experiencia);
+console.log("==ENTRENANDO==");
+deportista.entrenarHoras(5);
+console.log("==FIN ENTRENAMIENTO==");
+console.log("Deportista energia: " + deportista.energia);
+console.log("Deportista experiencia: " + deportista.experiencia);
